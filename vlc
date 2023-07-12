@@ -1,0 +1,12 @@
+Adding repository 'version' [...done]
+Repository 'version' successfully added
+
+URI         : https://download.videolan.org/SuSE/%3CSUSE
+Enabled     : Yes
+GPG Check   : Yes
+Autorefresh : No
+Priority    : 99 (default priority)
+
+Repository priorities in effect: (See 'zypper lr -P' for details)
+      90 (raised priority)  :  1 repository
+      99 (default priority) :  9 repositories
