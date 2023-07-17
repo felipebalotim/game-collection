@@ -1,25 +1,18 @@
 package com.balotim.gamecollection.entities;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.ColumnDefault;
 
-import java.io.Serial;
 import java.util.Objects;
-import java.util.UUID;
 
 @Entity
 @Table(name = "game")
 public class Game {
-    @Serial
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @ColumnDefault("random_uuid()")
-    private UUID id;
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
-    @Column(name = "release_year")
-    private Integer year;
+    private Integer releaseYear;
     private String genre;
     private String platform;
     private Double score;
@@ -32,9 +25,9 @@ public class Game {
     public Game() {}
 
     public Game(
-        UUID id,
+    	Long id,
         String title,
-        Integer year,
+        Integer releaseYear,
         String genre,
         String platform,
         Double score,
@@ -44,7 +37,7 @@ public class Game {
     ) {
         this.id = id;
         this.title = title;
-        this.year = year;
+        this.releaseYear = releaseYear;
         this.genre = genre;
         this.platform = platform;
         this.score = score;
@@ -53,11 +46,11 @@ public class Game {
         this.longDescription = longDescription;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,12 +62,12 @@ public class Game {
         this.title = title;
     }
 
-    public Integer getYear() {
-        return year;
+    public Integer getReleaseYear() {
+        return releaseYear;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setReleaseYear(Integer releaseYear) {
+        this.releaseYear = releaseYear;
     }
 
     public String getGenre() {

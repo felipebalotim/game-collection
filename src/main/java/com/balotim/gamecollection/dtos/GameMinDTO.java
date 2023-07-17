@@ -1,13 +1,12 @@
 package com.balotim.gamecollection.dtos;
 
 import com.balotim.gamecollection.entities.Game;
-
-import java.util.UUID;
+import com.balotim.gamecollection.projections.GameMinProjection;
 
 public class GameMinDTO {
-    private UUID id;
+    private Long id;
     private String title;
-    private Integer year;
+    private Integer releaseYear;
     private String imgUrl;
     private String shortDescription;
 
@@ -16,12 +15,20 @@ public class GameMinDTO {
     public GameMinDTO(Game game) {
         id = game.getId();
         title = game.getTitle();
-        year = game.getYear();
+        releaseYear = game.getReleaseYear();
         imgUrl = game.getImgUrl();
         shortDescription = game.getShortDescription();
     }
 
-    public UUID getId() {
+    public GameMinDTO(GameMinProjection gameMinProjection) {
+        id = gameMinProjection.getId();
+        title = gameMinProjection.getTitle();
+        releaseYear = gameMinProjection.getReleaseYear();
+        imgUrl = gameMinProjection.getImgUrl();
+        shortDescription = gameMinProjection.getShortDescription();
+    }
+
+    public Long getId() {
         return id;
     }
 
@@ -29,8 +36,8 @@ public class GameMinDTO {
         return title;
     }
 
-    public Integer getYear() {
-        return year;
+    public Integer getReleaseYear() {
+        return releaseYear;
     }
 
     public String getImgUrl() {
